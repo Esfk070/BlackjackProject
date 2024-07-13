@@ -12,9 +12,24 @@ public abstract class AbstractHand {
 		this.cardsInHand = new ArrayList<>();
 	}
 	
+	public void addCard(Card card) {
+		cardsInHand.add(card);
+		
+	}
+	
+	public void clear() {
+		this.cardsInHand = new ArrayList<Card>();
+		
+	}
+	
+	@Override
+	public String toString() {
+		return "AbstractHand [cardsInHand=" + cardsInHand + "]";
+	}
+
 	public abstract int getHandValue();
 	
-	//TODO addCard(Card card) and clear() need to be added
+	//DONE addCard(Card card) and clear() need to be added
 	
 
 }

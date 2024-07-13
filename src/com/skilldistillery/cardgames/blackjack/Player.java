@@ -14,11 +14,24 @@ public class Player {
 	
 	public void addCardToHand(Card card) {
 		//hand.addCard(card)
+		hand.addCard(card);
 	}
 	
 	public int getHandValue() {
 		return hand.getHandValue();
 	}
+	
+	public boolean getIsBlackJack()
+	{
+		return hand.isBlackjack();
+	}
+	
+	public boolean getIsBust()
+	{
+		return hand.isBust();
+	}
+	
+	
 	
 	
 	

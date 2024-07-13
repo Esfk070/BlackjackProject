@@ -16,8 +16,15 @@ public class Dealer extends Player {
 	
 	//TODO add dealer specific behaviors
 	public Card dealCard(){
+		System.out.println("The dealer deals a card...");
 		return deck.dealCard();
-	};
+	}
+	
+	public void shuffle() {
+		deck.shuffle();
+	}
+	
+	
 	
 	
 	

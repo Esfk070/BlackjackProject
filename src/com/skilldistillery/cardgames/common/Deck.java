@@ -6,12 +6,16 @@ import java.util.List;
 
 public class Deck {
 	
+	// Properties
 	List<Card> cardList = new ArrayList<>();
 	
+	// Constructor
 	public Deck() {
 		resetDeck();
 		
 	}
+	
+	// Methods
 	public void resetDeck() {
 		cardList = new ArrayList<>(52);
 		for(Suit st : Suit.values())
@@ -19,8 +23,7 @@ public class Deck {
 			for (Rank rk : Rank.values())
 			{
 				Card card = new Card(rk, st);
-				cardList.add(card);
-				
+				cardList.add(card);				
 			}
 		}
 	}
@@ -40,26 +43,11 @@ public class Deck {
 	public void shuffle()
 	{
 		Collections.shuffle(cardList);
+		System.out.println("The dealer shuffles the deck...");
 		
 	}
 	
-//	public void howManyCardDoYouWant(int numOfCardsRequested)
-//	{
-//		if (numOfCardsRequested > 0 || numOfCardsRequested < 53)
-//		{
-//			for (int i = 0;i < numOfCardsRequested;i++)
-//			{
-//				System.out.println(cardList.get(0));
-//				cardList.remove(0);
-//				
-//			}
-//		}
-//		else {
-//			
-//			System.out.println("ERROR");
-//		}
-//	
-//	}
+
 	
 	public boolean isEmpty() {
 		if(this.cardList.isEmpty()) {
