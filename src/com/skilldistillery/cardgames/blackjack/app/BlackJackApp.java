@@ -74,6 +74,11 @@ public class BlackJackApp {
 					this.gameOn = false;
 					break;
 				}
+				else if (player.getHandValue() == 21)
+				{
+					this.gameOn = false;
+					break;
+				}
 				
 				System.out.println("____________________________________________________");
 
