@@ -24,7 +24,14 @@ public abstract class AbstractHand {
 	
 	@Override
 	public String toString() {
-		return "AbstractHand [cardsInHand=" + cardsInHand + "]";
+		System.out.println("abstracthandtostring called out");
+		String str = "Cards in Hand: ";
+		for (Card cd: cardsInHand)
+		{
+			str = str + cd;
+		}
+		System.out.println("AbstractHandTOstrign is called");
+		return str;
 	}
 
 	public abstract int getHandValue();

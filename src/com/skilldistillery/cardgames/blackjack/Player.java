@@ -30,6 +30,25 @@ public class Player {
 	{
 		return hand.isBust();
 	}
+
+
+	@Override
+	public String toString() {
+		
+		
+		return hand.toString();
+	}
+
+
+
+
+
+//	@Override
+//	public String toString() {
+//		System.out.println("Player to string called?");
+//		return "Player [hand=" + hand + "]";
+//		
+//	}
 	
 	
 	

@@ -7,11 +7,11 @@ public class BlackJackHand extends AbstractHand{
 
 	//HAS NO FIELDS
 	
-	
-	public BlackJackHand()
-	{
-		
-	}
+//	
+//	public BlackJackHand()
+//	{
+//		
+//	}
 	
 	@Override
 	public int getHandValue() {
@@ -24,6 +24,10 @@ public class BlackJackHand extends AbstractHand{
 		return score;
 	}
 	
+	public BlackJackHand() {
+		super();
+	}
+
 	public boolean isBlackjack()
 	{
 		boolean gameOver = false;
@@ -54,6 +58,24 @@ public class BlackJackHand extends AbstractHand{
 		}
 		
 		return gameOver;
+	}
+
+//	@Override
+//	public String toString() {
+//		return "BlackJackHand [cardsInHand=" + cardsInHand + ", getHandValue()=" + getHandValue() + ", isBlackjack()="
+//				+ isBlackjack() + ", isBust()=" + isBust() + ", toString()=" + super.toString() + ", getClass()="
+//				+ getClass() + ", hashCode()=" + hashCode() + "]";
+//	}
+
+	@Override
+	public String toString() {
+		String str = "Hand contains: ";
+		for (Card cd : cardsInHand)
+		{
+			
+			str = str + cd.toString() + "    ";
+		}
+		return str;
 	}
 	
 	

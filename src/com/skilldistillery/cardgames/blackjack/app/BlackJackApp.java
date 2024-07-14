@@ -14,6 +14,8 @@ public class BlackJackApp {
 	private Dealer dealer = new Dealer();
 	Scanner scanner = new Scanner(System.in);
 	
+	boolean gameOn = true;
+	boolean playersTurn = true;
 	
 	
 	public static void main(String[] args) {
@@ -28,8 +30,6 @@ public class BlackJackApp {
 		
 		
 		
-		boolean gameOn = true;
-		boolean playersTurn = true;
 		
 		while (gameOn)
 		{
@@ -62,12 +62,21 @@ public class BlackJackApp {
 				break;
 			}
 			
-		
+		//int count =0;
 			while(!player.getIsBust() && playersTurn == true)
 			{
+
+				
+				System.out.println();
 				playersTurn = playerHitorStay(playersTurn);
+				if(player.getIsBust())
+				{
+					this.gameOn = false;
+					break;
+				}
 				
-				
+				System.out.println("____________________________________________________");
+
 			}
 			
 			
@@ -76,6 +85,41 @@ public class BlackJackApp {
 			
 		}
 
+		System.out.println(" Players " + player.toString());
+
+		System.out.println("Players hand value: " + player.getHandValue());
+		System.out.println("____________________________________________________");
+		System.out.println("____________________________________________________");
+
+		System.out.println(" Dealers " + dealer.toString());
+		System.out.println("Dealers hand value: " + dealer.getHandValue());
+		System.out.println("____________________________________________________");
+		System.out.println("____________________________________________________");
+
+		if (player.getHandValue() < dealer.getHandValue() && dealer.getHandValue() < 22)
+		{
+			System.out.println("Dealer Wins!!");
+		}
+		else if (player.getHandValue() > 21 && dealer.getHandValue() <= 21)
+		{
+			System.out.println("Dealer Wins");
+		}
+		
+		else if (player.getHandValue() > dealer.getHandValue() && player.getHandValue() < 22)
+		{
+			System.out.println("Player Wins!!");
+		}
+		else if (dealer.getHandValue() > 21 && player.getHandValue() <= 21)
+		{
+			System.out.println("Player Wins!!");
+		}
+		
+		else if (player.getHandValue() == dealer.getHandValue())
+		{
+			System.out.println("TIE!!!");
+		}
+		
+		
 		
 	System.out.println("End of Program");	
 	}
@@ -91,14 +135,22 @@ public class BlackJackApp {
 		if(choice == 2) {
 			playersTurn = false;
 			System.out.println("Player holds...");
+			System.out.println("____________________________________________________");
+
 			dealerTurn();
+			System.out.println("____________________________________________________");
+
 			return playersTurn;
 		}
 		
 		else if (player.getHandValue()==21)
 		{
 			playersTurn = false;
+			System.out.println("____________________________________________________");
+
 			dealerTurn();
+			System.out.println("____________________________________________________");
+
 			return playersTurn;
 			
 			
@@ -110,21 +162,24 @@ public class BlackJackApp {
 			
 			System.out.println("Players Draws a " + card);
 			System.out.println("Player hand value: " + player.getHandValue());
-			return playersTurn = false;
-			
+			System.out.println("____________________________________________________");
+
 		
 		}
+		System.out.println("____________________________________________________");
+
 	
-		return false;
-		
-		
+		return true;
+
 	}
 
 
 
 	private void dealerTurn() {
 		// TODO Auto-generated method stub
-		System.out.println("dealerTurn");
+		System.out.println("dealerTurn...");
+		System.out.println(" Dealers " + dealer.toString());
+		//System.out.println("Dealer hand value "+ dealer.getHandValue());
 		while (dealer.getHandValue() < 17)
 		{
 			System.out.println("Deader hand value "+ dealer.getHandValue());
@@ -133,7 +188,7 @@ public class BlackJackApp {
 			dealer.addCardToHand(card);
 			
 			System.out.println("Dealer draws a  "+ card);
-			System.out.println("Deader hand value "+ dealer.getHandValue());
+			System.out.println("Dealer hand value "+ dealer.getHandValue());
 		}
 		
 	}
