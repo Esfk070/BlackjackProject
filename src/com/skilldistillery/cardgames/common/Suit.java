@@ -1,20 +1,18 @@
 package com.skilldistillery.cardgames.common;
 
 public enum Suit {
-	
-	HEARTS("Hearts"), 
-	SPADES("Spades"), 
-	CLUBS("Clubs"), 
-	DIAMONDS("Diamonds");
-	
+
+	HEARTS("Hearts"), SPADES("Spades"), CLUBS("Clubs"), DIAMONDS("Diamonds");
+
 	private String name;
-	
-	private Suit (String name) {
+
+	private Suit(String name) {
 		this.name = name;
 	}
+
 	public String toString() {
 		return this.name;
-	}	
+	}
 }
 //Create a public enum called Rank with the constants (in order) 
 //TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING, ACE.

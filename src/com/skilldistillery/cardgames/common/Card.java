@@ -4,33 +4,30 @@ import java.util.Objects;
 
 public class Card {
 
-	//FIELDS
+	// FIELDS
 	private Rank cardRank;
 	private Suit suit;
 
-	
-	//CONSTRUCOTRS
+	// CONSTRUCOTRS
 	public Card(Rank cardRank, Suit suit) {
 		super();
 		this.cardRank = cardRank;
 		this.suit = suit;
 	}
-	
-	//GETTERS AND SETTERS
-	public int getValue()
-	{
+
+	// GETTERS AND SETTERS
+	public int getValue() {
 		return this.cardRank.getValue();
 	}
 
-
-	//TO STRING
+	// TO STRING
 	@Override
 	public String toString() {
-		return cardRank + " of " + suit; 
-		//return "Card [suit=" + suit + ", rank=" + cardRank + "]";
+		return cardRank + " of " + suit;
+		// return "Card [suit=" + suit + ", rank=" + cardRank + "]";
 	}
 
-	//HASHCODE AND EQUALS
+	// HASHCODE AND EQUALS
 	@Override
 	public int hashCode() {
 		return Objects.hash(cardRank, suit);
@@ -47,8 +44,5 @@ public class Card {
 		Card other = (Card) obj;
 		return cardRank == other.cardRank && suit == other.suit;
 	}
-
-
-
 
 }
